@@ -38,10 +38,10 @@ def spacemonSim(roster1,roster2):
 
 def competition(roster1,roster2):
 
-    type_mult = int("Enter type_mult from Table1:")
+    type_mult = int(input("Enter type_mult from Table1:"))
 
-    #Power=roster1[0][2] #power of spacemon1 in roster1
-    damage = type_mult * roster1[0][2]
+    Power=roster1[0][2] #power of spacemon1 in roster1
+    damage = type_mult * Power
     
     energy=roster2[0][1] #Energy of spacemon1 in roster2
     E1= energy - damage #Energy of planet in roster2 after damage
@@ -51,7 +51,7 @@ def competition(roster1,roster2):
 
     if E1<EE1:
         #Second Match
-        type_mult1 = int("Enter type_mult from Table1:")
+        type_mult1 = int(input("Enter type_mult2 from Table1:"))
 
         Power2 = roster2[1][2] #Power of spacemon2 in roster2
         damage1 = type_mult1 * Power2
@@ -77,5 +77,6 @@ def competition(roster1,roster2):
 x = connection()
 #createTable(x)
 #A1 = insert(x)
-print(x)
+spacemonSim(roster1,roster2)
+competition(roster1,roster2)
 x.commit()
